@@ -20,6 +20,7 @@ namespace BowlersApp.Controllers
             context = temp;
         }
 
+        //home page
         public IActionResult Index(string teamNames)
         {
             ViewBag.teams = teamNames;
@@ -29,6 +30,8 @@ namespace BowlersApp.Controllers
             return View(bowlersContext);
         }
 
+
+        // add bowler page
         [HttpGet]
         public IActionResult AddBowler()
         {
@@ -53,6 +56,7 @@ namespace BowlersApp.Controllers
             }
         }
 
+        //edit bowler page 
         [HttpGet]
         public IActionResult EditBowler(int id)
         {
@@ -71,6 +75,8 @@ namespace BowlersApp.Controllers
             return RedirectToAction("Index");
         }
 
+
+        //delete bowler page
         [HttpGet]
         public IActionResult DeleteBowler(int id)
         {
